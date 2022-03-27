@@ -6,7 +6,6 @@ var plates = [
   "111 LAV",
   "111 WC",
   "13 OG",
-  "13 OG",
   "2 BOG",
   "21 WC",
   "222 LAV",
