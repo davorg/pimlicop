@@ -91,9 +91,9 @@ $( document ).ready(function() {
     // console.log(value + ': ' + localStorage.getItem(value));
     if (localStorage.getItem(value) !== null) {
       checked = ' checked';
-      date    = ' : <i>' + localStorage.getItem(value) + '</i>';
+      date    = ' : <i class="small">' + localStorage.getItem(value) + '</i>';
     }
-    $("#plates tbody").append("<tr><td><input class='plate' type='checkbox' value='" + value + "' " + checked + "></td><td>" + value + ' ' + date + "</td></tr>");
+    $("#plates tbody").append("<tr><td width='5%'><input class='plate' type='checkbox' value='" + value + "' " + checked + "></td><td width='95%'>" + value + ' ' + date + "</td></tr>");
   });
 
   $('.plate').change(function() {
@@ -101,7 +101,7 @@ $( document ).ready(function() {
       let now = new Date();
       let datestr = now.toDateString() + ' ' + now.toTimeString().substring(0, 5);
       localStorage.setItem(this.value, datestr);
-      $(this).parent().next().append(' : <i>' + datestr + '</i>');
+      $(this).parent().next().append(' : <i class="small">' + datestr + '</i>');
     }
     else {
       localStorage.removeItem(this.value);
