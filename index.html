@@ -87,19 +87,25 @@
 $( document ).ready(function() {
   $.each(plates, function( index, value ) {
     let checked = '';
+    let date    = '';
     // console.log(value + ': ' + localStorage.getItem(value));
-    if (localStorage.getItem(value) === "1") {
+    if (localStorage.getItem(value) !== null) {
       checked = ' checked';
+      date    = ' : <i>' + localStorage.getItem(value) + '</i>';
     }
-    $("#plates tbody").append("<tr><td><input class='plate' type='checkbox' value='" + value + "' " + checked + "></td><td>" + value + "</td></tr>");
+    $("#plates tbody").append("<tr><td><input class='plate' type='checkbox' value='" + value + "' " + checked + "></td><td>" + value + ' ' + date + "</td></tr>");
   });
 
   $('.plate').change(function() {
     if ($(this).is(':checked')) {
-      localStorage.setItem(this.value, "1");
+      let now = new Date();
+      let datestr = now.toDateString() + ' ' + now.toTimeString().substring(0, 5);
+      localStorage.setItem(this.value, datestr);
+      $(this).parent().next().append(' : <i>' + datestr + '</i>');
     }
     else {
       localStorage.removeItem(this.value);
+      $(this).parent().next().html(this.value);
     }
     // console.log(this.value + ': ' + localStorage.getItem(this.value));
   });
