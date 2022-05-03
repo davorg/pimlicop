@@ -143,6 +143,7 @@ var plates = [
   "W11 BOG",
   "W12 BOG",
   "W12 TAP",
+  "W13 BOG",
   "W14 BOG",
   "W14 LAV",
   "W14 LOO",
