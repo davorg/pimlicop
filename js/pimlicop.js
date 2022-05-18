@@ -134,6 +134,7 @@ var plates = [
   "TAP 570P",
   "TE57 LOO",
   "TE57 TAP",
+  "TH15 LAV",
   "TH15 LOO",
   "TH15 TAP",
   "THIS TAP",
